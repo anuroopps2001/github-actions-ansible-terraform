@@ -1,10 +1,13 @@
-name: Day 01 Assignment
+name: Runs only with commit message containing anuroop
 
 on: 
   push:
+    branches:
+      - main
 
 jobs:
   print-info:
+    if: contains(github.event.head_commit.message, 'anuroop')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
