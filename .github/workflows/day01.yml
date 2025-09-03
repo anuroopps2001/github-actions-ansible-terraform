@@ -1,0 +1,22 @@
+name: Day 01 Assignment
+
+on: 
+  push:
+
+jobs:
+  print-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print GitHub username
+        run: | 
+          echo "GitHub Username: ${{ github.actor }}"
+
+      - name: Print repository name
+        run: |
+          echo "Repository: ${{ github.repository }}"
+
+      - name: Custom message
+        run: echo "Learning GitHub Actions 🚀"
